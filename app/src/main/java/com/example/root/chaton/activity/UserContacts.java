@@ -32,11 +32,14 @@ import com.example.root.chaton.beans.ContactBean;
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 
+import org.json.JSONArray;
+
 public class UserContacts extends Activity implements OnItemClickListener {
 
     private ListView listView;
     private List<ContactBean> listContacts = new ArrayList<ContactBean>();
     private PhoneNumberUtil phoneUtil;
+    JSONArray contactListNumbers = new JSONArray();
     private String countryCode;
     String myNo;
     @SuppressLint("DefaultLocale")
@@ -62,7 +65,7 @@ public class UserContacts extends Activity implements OnItemClickListener {
                         , ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME
                         , ContactsContract.CommonDataKinds.Phone.NUMBER
                 }, null,
-                null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME_PRIMARY + " COLLATE NOCASE");
+                null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " COLLATE NOCASE");
         while (phones.moveToNext()) {
 
             String Contactname = phones
@@ -81,11 +84,13 @@ public class UserContacts extends Activity implements OnItemClickListener {
                 e.printStackTrace();
             }
 
-            if(!listContacts.contains(ContactNo) && !ContactNo.equals(myNo)) {
+            if(!contactListNumbers.toString().contains(ContactNo) && !ContactNo.equals(myNo)) {
                 ContactBean objContact = new ContactBean();
                 objContact.setName(Contactname);
                 objContact.setPhone(ContactNo);
                 listContacts.add(objContact);
+
+                contactListNumbers.put(ContactNo);
             }
         }
         phones.close();
@@ -110,8 +115,8 @@ public class UserContacts extends Activity implements OnItemClickListener {
     @Override
     public void onItemClick(AdapterView<?> listView, View view, int position,
                             long id) {
-        //String myNo = getIntent().getExtras().getString("myNo");
-        String myNo = "+15125786728";
+        String myNo = getIntent().getExtras().getString("myNo");
+        //String myNo = "+15125786728";
         //String myNo = "+919975161966";
         try {
             myNo = phoneUtil.format(phoneUtil.parse(myNo, countryCode.toUpperCase()), PhoneNumberUtil.PhoneNumberFormat.E164).replaceAll("[-+^]*", "");

@@ -25,7 +25,7 @@ public class MainActivity extends FragmentActivity {
     static final int NUM_ITEMS = 4;
     ImageFragmentPagerAdapter imageFragmentPagerAdapter;
     ViewPager viewPager;
-    public static final String[] IMAGE_NAME = {"slider1","slider2","slider3","slider4"};
+    public static final String[] IMAGE_NAME = {"slider1","slider2","slider3","slider5"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

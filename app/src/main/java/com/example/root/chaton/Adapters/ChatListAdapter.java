@@ -33,7 +33,7 @@ public class ChatListAdapter extends FirebaseListAdapter<Chat> {
         	ch.setPadding(250, 5, 40, 15);
         	sent.setText(chat.getSent_time());
         	sent.setTextSize(11);
-        	sent.setPadding(10, 10, 5, 0);	
+        	sent.setPadding(10, 10, 5, 0);
         }
          else {
         	ch.setText(chat.getMessage());
