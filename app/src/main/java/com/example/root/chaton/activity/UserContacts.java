@@ -52,7 +52,6 @@ public class UserContacts extends Activity implements OnItemClickListener {
         TextView tv = (TextView) findViewById(R.id.Title);
         myNo = getIntent().getExtras().getString("myNo");
         tv.setText(R.string.app_name);
-        //tv.setPadding(160, 15, 0, 15);
         setContentView(R.layout.activity_user_contacts);
         listView = (ListView) findViewById(R.id.contact_listview);
         listView.setOnItemClickListener(this);

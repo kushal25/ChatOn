@@ -29,7 +29,6 @@ public class LoginActivity extends Activity {
         getActionBar().setCustomView(R.layout.action_bar);
         TextView tv = (TextView) findViewById(R.id.Title);
         tv.setText(R.string.login);
-        //tv.setPadding(265, 15, 0, 15);
         Firebase.setAndroidContext(this);
         setContentView(R.layout.activity_login);
         getIntent();

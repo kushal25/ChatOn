@@ -157,9 +157,8 @@ public class UserActivity extends Activity {
         String tym = tim.format(c.getTime());
 
         if (!input.equals("")) {
-            // Create our 'model', a Chat object
+
             Chat chat = new Chat(input, myNo, tym);
-            // Create a new, auto-generated child of that chat location, and save our chat data there
             ref.child(key).push().setValue(chat);
             inputText.setText("");
 

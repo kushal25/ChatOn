@@ -33,7 +33,7 @@ public class MainActivity extends FragmentActivity {
         getActionBar().setCustomView(R.layout.action_bar);
         TextView tv = (TextView) findViewById(R.id.Title);
         tv.setText(R.string.app_name);
-        //tv.setPadding(265, 15, 0, 15);
+
         final ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
         final Boolean isInternetPresent = cd.isConnectingToInternet();
 

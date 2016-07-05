@@ -28,7 +28,7 @@ public class SignupActivity extends Activity {
         getActionBar().setCustomView(R.layout.action_bar);
         TextView tv = (TextView) findViewById(R.id.Title);
         tv.setText(R.string.signup);
-        //tv.setPadding(265, 15, 0, 15);
+
         Firebase.setAndroidContext(this);
         setContentView(R.layout.activity_signup);
         getIntent();

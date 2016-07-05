@@ -7,9 +7,6 @@ package com.example.root.chaton.db;
         import android.database.SQLException;
         import android.database.sqlite.SQLiteDatabase;
         import android.database.sqlite.SQLiteException;
-        import android.util.Log;
-        import android.widget.Toast;
-
 
         import java.util.ArrayList;
 
@@ -108,38 +105,6 @@ public class ChatModel {
         return drawfts;
 
     }
-
-//    public ArrayList<ChatBean> getUserRecords(String groupId, int limit, int offset) throws SQLException {
-//        ArrayList<ChatBean> records = new ArrayList<ChatBean>();
-//        Cursor cursor = null;
-//        try {
-//            ChatModel _db = getR(cx);
-//            cursor = _db.db.query(TABLE_CHATS,
-//                    allColumns, COLUMN_GROUP_ID + " = '" + groupId + "'", null, null, null, COLUMN_ID + " DESC", String.valueOf(offset) + "," + String.valueOf(limit));
-//            if (offset == 0) {
-//                cursor.moveToLast();
-//                while (!cursor.isBeforeFirst()) {
-//                    ChatBean comment = cursorToChatBean(cursor);
-//                    records.add(comment);
-//                    cursor.moveToPrevious();
-//                }
-//            } else {
-//                cursor.moveToFirst();
-//                while (!cursor.isAfterLast()) {
-//                    ChatBean comment = cursorToChatBean(cursor);
-//                    records.add(comment);
-//                    cursor.moveToNext();
-//                }
-//            }
-//            cursor.close();
-//            closeDBConnection(_db);
-//        } finally {
-//            if (cursor != null) {
-//                cursor.close();
-//            }
-//        }
-//        return records;
-//    }
 
 
     private ChatBean cursorToChatBean(Cursor cursor) {

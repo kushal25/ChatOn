@@ -76,8 +76,6 @@ public class CustomAdapter extends BaseAdapter {
 
                 String num = names.get(i).getSentBy();
 
-               // Log.d("here", names.get(i).getMsg());
-
                 if (num.equals(yourNum)) {
                     holder.tv_chat.setText(names.get(i).getMsg());
                     holder.tv_chat.setBackgroundResource(R.drawable.bubble_a);
